@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "navbar navbar navbar navbar"
+    "main main main main"
+    "main main main main"
+    "footer footer footer footer";
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.navbar {
+  grid-area: navbar;
+}
+
+.main {
+  grid-area: main;
+}
+
+.loan {
+  color: white;
+  font-size: 1cm;
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+}
