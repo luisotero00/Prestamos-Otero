@@ -31,8 +31,9 @@ body {
 }
 
 .loan {
-  color: white;
+  color: (38, 90%, 60%);
   font-size: 1cm;
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
+  background-image: url("./");
 }
