@@ -1,4 +1,10 @@
-let deudores = [];
+let deudores 
+let newDeudor = localStorage.getItem("lista-deudores")
+if (newDeudor == null){
+    deudores = []
+}else{
+    deudores = JSON.parse(newDeudor)
+}
 const button = document.getElementById("btnAdd");
 const button1 = document.getElementById("btnShow")
 class Deudor {
@@ -29,9 +35,11 @@ function addUser() {
 
         const deudor = new Deudor(nombreUsuario, interest)
         deudores.push(deudor);
+        localStorage.setItem("lista-deudores", JSON.stringify(deudores))
         console.log(nombreUsuario, interest);
         deudor.mensaje()
     }
+    
 }
 
 button1.addEventListener('click', () => {
@@ -39,29 +47,15 @@ button1.addEventListener('click', () => {
 });
 
 function showUser() {
-    for (const deudor1 of deudores) {
+    for (const deudor of deudores) {
+        console.log(deudores);
+        console.log(deudor);
         let contenedor = document.createElement("div");
-        contenedor.innerHTML = `<h3> Deudor: ${deudor1.nombre}</h3>
-                                <h3> Deuda: ${deudor1.deuda}</h3>`;
+        contenedor.innerHTML = `<h3> Deudor: ${deudor.nombre}</h3>
+                                <h3> Deuda: ${deudor.deuda}</h3>`;
         document.body.appendChild(contenedor);
     }
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
